@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useTransition } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import { assets } from "../assets/frontend_assets";
 import Title from "../Components/Title";
@@ -7,7 +7,7 @@ import ProductItem from "../Components/ProductItem";
 const Collection = () => {
 
   const [filterProducts, setFilterProducts] = useState([]);
-  const { products } = useContext(ShopContext);
+  let { products, search, showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
 
   // State Varibles for categoriess
@@ -36,8 +36,13 @@ const Collection = () => {
     }
   }
 
+  // Seacrh Filter
   const applyFilter = () => {
     let productsCopy = products.slice();
+
+    if(showSearch && search){
+      productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+    }
 
     if(category.length > 0){
       productsCopy = productsCopy.filter(item => category.includes(item.category))
@@ -67,7 +72,7 @@ const Collection = () => {
 
   useEffect(()=>{
     applyFilter();
-  }, [category, subCategory])
+  }, [category, subCategory, search, showSearch])
 
   useEffect(()=>{
     sortProduct();
