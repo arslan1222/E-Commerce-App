@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { products } from "../assets/frontend_assets";
+import { products } from "../assets/frontend_assets.js";
 
 export const ShopContext = createContext();
 

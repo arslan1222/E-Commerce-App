@@ -10,6 +10,7 @@ import Contact from './Pages/Contact'
 import Login from './Pages/Login'
 import Cart from './Pages/Cart'
 import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/login' element={<Login />}/>
 
       </Routes>
+      <Footer />
     </div>
   )
 }
