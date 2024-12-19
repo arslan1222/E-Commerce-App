@@ -4,6 +4,7 @@ import 'dotenv/config'
 import connectDB from './config/mongodb.js';
 import connectCloudinary from './config/cloudinary.js';
 import userRouter from './routes/user.route.js';
+import productRouter from './routes/product.route.js';
 
 // App Config
 
@@ -12,13 +13,17 @@ const PORT = process.env.PORT || 8080;
 connectDB();
 connectCloudinary();
 
+
 // Middelwares
 app.use(express.json()); // Whatever req will be get will be parse using this
 app.use(cors()) // We can access the backend from any API
 
-// API endpoints
 
+// API endpoints
 app.use('/api/user', userRouter);
+app.use('/api/product', productRouter);
+
+
 
 app.get('/', (req, res)=>{
     res.send("I am root!")
