@@ -5,6 +5,8 @@ import connectDB from './config/mongodb.js';
 import connectCloudinary from './config/cloudinary.js';
 import userRouter from './routes/user.route.js';
 import productRouter from './routes/product.route.js';
+import cartRouter from './routes/cart.route.js';
+import orderRouter from './routes/order.route.js';
 
 // App Config
 
@@ -22,6 +24,8 @@ app.use(cors()) // We can access the backend from any API
 // API endpoints
 app.use('/api/user', userRouter);
 app.use('/api/product', productRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/order', orderRouter);
 
 
 
