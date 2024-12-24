@@ -29,11 +29,11 @@ const orderSchema = new mongoose.Schema({
   },
   paymentMethod: {
     type: String,
-    // required: true,
+    required: true,
   },
-  Date: {
+  date: {
     type: Number,
-    // required: true,
+    required: true,
   },
 });
 

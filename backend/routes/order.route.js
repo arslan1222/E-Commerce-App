@@ -17,7 +17,7 @@ orderRouter.post('/payneer',authUser, placeOrderPayoneer);
 
 
 // User features
-orderRouter.post('/userOrder', authUser, userOrders);
+orderRouter.post('/userorders', authUser, userOrders);
 
 export default orderRouter;
 
