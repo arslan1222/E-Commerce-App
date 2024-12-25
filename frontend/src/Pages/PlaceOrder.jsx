@@ -68,12 +68,30 @@ const PlaceOrder = () => {
   
       console.log("Order Data:", orderData);
   
-      const response = await axios.post(backendUrl + "/api/order/place", orderData, { headers: { token } });
-      if (response.data.success) {
-        setCartItems({});
-        navigate('/orders');
-      } else {
-        toast.error(response.data.message);
+      switch(method){
+      
+      case "cod":
+        const response = await axios.post(backendUrl + "/api/order/place", orderData, { headers: { token } });
+        if (response.data.success) {
+          setCartItems({});
+          navigate('/orders');
+        } else {
+          toast.error(response.data.message);
+        }
+        break;
+
+        case "stripe":
+
+        const responseStripe = await axios.post(backendUrl + "/api/order/stripe", orderData, {headers: {token}});
+        if(responseStripe.data.success){
+          const {session_url} = responseStripe.data;
+          window.location.replace(session_url)
+        } else {
+          toast.error(response.data.message);
+        }
+
+
+        break;
       }
     } catch (error) {
       console.error("Error submitting the order:", error);
