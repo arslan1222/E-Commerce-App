@@ -8,7 +8,7 @@ export const ShopContext = createContext();
 const ShopContextProvider = (props) => {
     const currency = 'Rs. '; // Simply change with any symbol currency
     const deliveryFee = 250;
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const backendUrl = "https://e-commerce-app-szfy.onrender.com";
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
