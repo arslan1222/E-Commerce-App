@@ -14,8 +14,8 @@ const Contact = () => {
         <div className='flex flex-col justify-center items-start gap-6'>
           <p className='font-semiblot text-gray-600 text-xl'>Our Store</p>
           <p className='text-gray-500'>Backer Street 335 <br /> Suite 489, Sialkot, pakistan</p>
-          <p className='text-gray-500'>Tel: (052) 888-4443 <br />Email: howigrow@gmail.com</p>
-          <p className='text-gray-600 font-semibold text-xl'>Careers at How I Grow</p>
+          <p className='text-gray-500'>Tel: (+92) 321-7077-229 <br />Email: arslanhaiderchand88@gmail.com</p>
+          <p className='text-gray-600 font-semibold text-xl'>Careers at CONNECT</p>
           <p className='text-gray-500'>Learn more about our teams and job openings.</p>
           <button className='border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
         </div>

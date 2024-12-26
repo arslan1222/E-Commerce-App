@@ -5,7 +5,18 @@ const addToCart = async (req, res) => {
   try {
     const { userId, itemId, size } = req.body;
 
+    // Check if all required fields are provided
+    if (!userId || !itemId || !size) {
+      return res.json({ success: false, message: "Missing required fields" });
+    }
+
+    // Find the user by ID
     const userData = await userModel.findById(userId);
+
+    if (!userData) {
+      return res.json({ success: false, message: "User not found" });
+    }
+
     let cartData = userData.cartData || {};
 
     if (cartData[itemId]) {
@@ -31,7 +42,17 @@ const updateCart = async (req, res) => {
   try {
     const { userId, itemId, size, quantity } = req.body;
 
+    // Check if all required fields are provided
+    if (!userId || !itemId || !size || quantity === undefined) {
+      return res.json({ success: false, message: "Missing required fields" });
+    }
+
     const userData = await userModel.findById(userId);
+
+    if (!userData) {
+      return res.json({ success: false, message: "User not found" });
+    }
+
     let cartData = userData.cartData || {};
 
     if (!cartData[itemId]) cartData[itemId] = {};
@@ -50,9 +71,18 @@ const getUserCart = async (req, res) => {
   try {
     const { userId } = req.body;
 
-    const userData = await userModel.findById(userId);
-    let cartData = userData.cartData || {};
+    // Check if userId is provided
+    if (!userId) {
+      return res.json({ success: false, message: "Missing userId" });
+    }
 
+    const userData = await userModel.findById(userId);
+
+    if (!userData) {
+      return res.json({ success: false, message: "User not found" });
+    }
+
+    let cartData = userData.cartData || {};
     res.json({ success: true, cartData: cartData });
   } catch (error) {
     console.error(error);

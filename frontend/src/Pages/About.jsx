@@ -13,7 +13,7 @@ const About = () => {
         <img src={assets.about_img} className="w-full max-w-[450px] " alt="" />
         <div className="flex flex-col justify-center gap-5 md:w-2/4 text-gray-600">
           <p>
-          Welcome to How I Grow, your ultimate destination for all your shopping needs! We are dedicated to offering high-quality products that seamlessly fit into your lifestyle. Whether you're shopping for fashion or other essentials, we strive to make your experience enjoyable, convenient, and rewarding. Our journey began with the idea of providing reliable, affordable, and trendy products in one place. Since day one, we’ve been committed to offering a carefully curated selection of items that prioritize quality and value.
+          Welcome to CONNECT, your ultimate destination for all your shopping needs! We are dedicated to offering high-quality products that seamlessly fit into your lifestyle. Whether you're shopping for fashion or other essentials, we strive to make your experience enjoyable, convenient, and rewarding. Our journey began with the idea of providing reliable, affordable, and trendy products in one place. Since day one, we’ve been committed to offering a carefully curated selection of items that prioritize quality and value.
           </p>
           <p>We are more than just an online store. We are a team of passionate individuals committed to bringing you the best products and the most seamless shopping experience. Whether you're looking for the latest trends in fashion, we've got you covered!</p>
           <b className="text-gray-800">Our Mission</b>
